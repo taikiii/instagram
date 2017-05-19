@@ -10,7 +10,11 @@
       </ul>
     </div>
   <% end %>
-
+   <div class="field">
+     <%= f.label :photo_image %>
+     <%= f.file_field :photo_image %>
+   </div>
+    <br>
     <%= f.label :コメント %>
     <%= f.text_field :content, class: 'form-control' %>
     <br>

@@ -13,7 +13,6 @@
     <ul>
       <li><%= link_to "Instagram", root_path %></li>
       <li><%= link_to "一覧", blogs_path %></li>
-    </ul>
     <% if user_signed_in? %>
       <li><%= link_to 'マイページ', edit_user_registration_path %></li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
@@ -21,14 +20,10 @@
       <li><%= link_to 'ログイン', new_user_session_path %></li>
       <li><%= link_to 'サインアップ', new_user_registration_path %></li>
     <% end %>
+    </ul>
   </header>
 
 <%= yield %>
-
-  <footer>
-    <p>運営会社DIVE INTO CODE株式会社</p>
-    <p>© 2015-2016 Copyright DIVE INTO CODE Corp.</p>
-  </footer>
 
 </body>
 </html>

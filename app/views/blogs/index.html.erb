@@ -5,8 +5,10 @@
      <%= link_to "投稿", new_blog_path %>
    <% @blogs.each do |blog| %>
    <div class="row">
+     <p><%= blog.user.name %></p>
+     <p><%= profile_img(blog.user) %></p>
      <p>本文:<%= blog.content %></p>
-     <%= profile_img(blog.user) %>
+     <p>写真:<%= blog.photo_image %></p>
      <%= link_to "編集", edit_blog_path(blog.id) %>
      <%= link_to '削除', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？' }  %>
    </div>
