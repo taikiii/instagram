@@ -8,7 +8,7 @@
      <p><%= blog.user.name %></p>
      <p><%= profile_img(blog.user) %></p>
      <p>本文:<%= blog.content %></p>
-     <p>写真:<%= image_tag(blog.photo_image) %></p>
+     <p>写真:<%= image_tag blog.photoimage %></p>
      <%= link_to "編集", edit_blog_path(blog.id) %>
      <%= link_to '削除', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？' }  %>
    </div>

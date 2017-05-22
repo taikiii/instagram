@@ -12,7 +12,6 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blogs_params)
-    binding.pry
     @blog.user_id = current_user.id
     if @blog.save
       redirect_to blogs_path, notice: "投稿しました！"
@@ -40,12 +39,12 @@ class BlogsController < ApplicationController
     redirect_to blogs_path, notice: "削除しました！"
   end
 
-  end
   private
    def blogs_params
-     params.require(:blog).permit(:content, :photo_image)
+     params.require(:blog).permit(:content, :photoimage)
    end
 
    def set_blog
      @blog = Blog.find(params[:id])
    end
+end
